@@ -4,6 +4,8 @@ const cors = require('cors'); //Para realizar peticiones desde cualquier dominio
 
 const path = require('path'); //Para encontrar la ruta de un html
 
+const router = require('./src/routes');
+
 const {json, urlencoded} = express; //Importar json y urlencoded desde express
 
 const app = express(); //Ésta app será nuestro servidor que va a estar corriendo 
@@ -16,6 +18,8 @@ const cosrsOptions = {
 }
 
 app.use(cors(cosrsOptions)); //Cualquier origen puede acceder a nuestro MS
+
+app.use(router);
 
 app.use('/',(req, res) => {
 	res.send('This is the microservice 1 and version 1.0.0') //Primer path

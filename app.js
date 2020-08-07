@@ -8,7 +8,7 @@ const {json, urlencoded} = express; //Importar json y urlencoded desde express
 
 const app = express(); //Ésta app será nuestro servidor que va a estar corriendo 
 
-const port = process.env.PORT = 8080; //Puerto por donde va a exponerse la app
+const port = process.env.PORT || 8080; //Puerto por donde va a exponerse la app
 
 const cosrsOptions = {
 	origin: '*',
@@ -17,3 +17,10 @@ const cosrsOptions = {
 
 app.use(cors(cosrsOptions)); //Cualquier origen puede acceder a nuestro MS
 
+app.use('/',(req, res) => {
+	res.send('This is the microservice 1 and version 1.0.0') //Primer path
+})
+
+app.listen(port, () => { 
+	console.log(`Server listening on port ${port}`); //Hacer que la aplicación escuche por el puerto configurad en la linea 11
+})

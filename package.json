@@ -1,0 +1,21 @@
+{
+  "name": "apiportal",
+  "version": "1.0.0",
+  "description": "apiservice with nodejs, docker and gcp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "docker",
+    "gcp"
+  ],
+  "author": "Angeelbert Jimenez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

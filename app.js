@@ -13,6 +13,6 @@ app.get('/people/nationalId',people.getId);
 app.post('/people',people.Add);
 app.put('/people/nationalId',people.Edit);
 app.delete('/people/nationalId',people.Delete);
-
-app.listen(3000);
-console.log('escuchando en el puerto 3000...');
+/*
+app.listen(8080);
+console.log('escuchando en el puerto 8080...');*/

@@ -16,6 +16,17 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angeelbert/ApiPortal_Exercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/angeelbert/ApiPortal_Exercise/issues"
+  },
+  "homepage": "https://github.com/angeelbert/ApiPortal_Exercise#readme"
 }

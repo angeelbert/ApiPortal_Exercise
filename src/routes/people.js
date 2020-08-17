@@ -1,7 +1,18 @@
 const router = require('express').Router(); //Importa routes desde express
 var mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhhost/people")
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://admin:admin@cluster0.tu3rr.gcp.mongodb.net/peopledb?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+//mongoose.connect("mongodb://localhhost/people");
 
 var peopleSchema = {
   NationalID: String,
@@ -76,35 +87,3 @@ exports.Add = function(req, res){
       }
     });
   }
-/*
-exports.getId('/').get((req, res)=>{
-  people.find(function(error, people)){
-    res.send(people);
-  }
-});
-
-
-
-router.route('/:lang').get((req, res) => {
-    switch(req.params.lang){
-      case "es": 
-        msg="Hola Mundo!";
-        break;
-      case "en":
-        msg="People World!";
-        break;
-      case "fr":
-        msg="Bonjour Monde!";
-        break;
-      default:
-        msg="Hallo Welt!";
-    }
-    res.json({msg});
-  })
-
-  router.route('/').post((req, res) => {
-    msg = `People ${req.body.name || "World"} from get request!`;
-    res.json({msg});
-  })
-
-module.exports = router;*/

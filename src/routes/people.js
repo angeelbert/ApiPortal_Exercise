@@ -1,7 +1,14 @@
 const router = require('express').Router(); //Importa routes desde express
 var mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhhost/people")
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://admin:admin@cluster0.tu3rr.gcp.mongodb.net/peopledb?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 var peopleSchema = {
   NationalID: String,
